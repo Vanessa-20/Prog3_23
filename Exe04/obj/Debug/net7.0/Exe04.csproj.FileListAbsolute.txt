@@ -1,0 +1,15 @@
+C:\prog_1\Exe04\bin\Debug\net7.0\Exe04.exe
+C:\prog_1\Exe04\bin\Debug\net7.0\Exe04.deps.json
+C:\prog_1\Exe04\bin\Debug\net7.0\Exe04.runtimeconfig.json
+C:\prog_1\Exe04\bin\Debug\net7.0\Exe04.dll
+C:\prog_1\Exe04\bin\Debug\net7.0\Exe04.pdb
+C:\prog_1\Exe04\obj\Debug\net7.0\Exe04.csproj.AssemblyReference.cache
+C:\prog_1\Exe04\obj\Debug\net7.0\Exe04.GeneratedMSBuildEditorConfig.editorconfig
+C:\prog_1\Exe04\obj\Debug\net7.0\Exe04.AssemblyInfoInputs.cache
+C:\prog_1\Exe04\obj\Debug\net7.0\Exe04.AssemblyInfo.cs
+C:\prog_1\Exe04\obj\Debug\net7.0\Exe04.csproj.CoreCompileInputs.cache
+C:\prog_1\Exe04\obj\Debug\net7.0\Exe04.dll
+C:\prog_1\Exe04\obj\Debug\net7.0\refint\Exe04.dll
+C:\prog_1\Exe04\obj\Debug\net7.0\Exe04.pdb
+C:\prog_1\Exe04\obj\Debug\net7.0\Exe04.genruntimeconfig.cache
+C:\prog_1\Exe04\obj\Debug\net7.0\ref\Exe04.dll
