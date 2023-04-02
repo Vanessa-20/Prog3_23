@@ -1,22 +1,21 @@
 ﻿var myFloat = 10f;
 float meuFloat = 11;
 
-//Conversão de tipo numérico
-
+//conversão de tipo numérico 
 int myInteger = 100;
 meuFloat = (float)myInteger;
-
 decimal myDecimal = Convert.ToDecimal(myInteger);
 
-//força o mydouble
 var myDouble = 10d;
-//chama mydouble
-myDecimal = 10m;
+myDecimal =10m;
 
 string meuNumeroTexto = Convert.ToString(myInteger);
-int qtdChars = meuNumeroTexto.Length;
-for(int i = 0; i < qtdChars; i++)
+int qtdchars = meuNumeroTexto.Length;
+for(int i = 0; i<qtdchars; i++)
+//parametros do laço de repetição:
+//i<qtdchars = flag
+//i=0 = contador
+//i++ = acumulador
 {
-    Console.WriteLine( meuNumeroTexto[i] );
-
+    Console.WriteLine(meuNumeroTexto[i]);
 }
