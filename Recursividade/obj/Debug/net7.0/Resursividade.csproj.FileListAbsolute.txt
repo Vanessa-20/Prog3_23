@@ -1,0 +1,15 @@
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\obj\Debug\net7.0\Resursividade.csproj.AssemblyReference.cache
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\obj\Debug\net7.0\Resursividade.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\obj\Debug\net7.0\Resursividade.AssemblyInfoInputs.cache
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\obj\Debug\net7.0\Resursividade.AssemblyInfo.cs
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\obj\Debug\net7.0\Resursividade.csproj.CoreCompileInputs.cache
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\bin\Debug\net7.0\Resursividade.exe
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\bin\Debug\net7.0\Resursividade.deps.json
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\bin\Debug\net7.0\Resursividade.runtimeconfig.json
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\bin\Debug\net7.0\Resursividade.dll
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\bin\Debug\net7.0\Resursividade.pdb
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\obj\Debug\net7.0\Resursividade.dll
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\obj\Debug\net7.0\refint\Resursividade.dll
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\obj\Debug\net7.0\Resursividade.pdb
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\obj\Debug\net7.0\Resursividade.genruntimeconfig.cache
+C:\Users\vanip\Unoesc\Prog_23\Resursividade\obj\Debug\net7.0\ref\Resursividade.dll
