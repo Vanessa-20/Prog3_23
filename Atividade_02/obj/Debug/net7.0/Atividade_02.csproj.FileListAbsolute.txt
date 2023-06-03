@@ -1,0 +1,15 @@
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\obj\Debug\net7.0\Atividade_02.csproj.AssemblyReference.cache
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\obj\Debug\net7.0\Atividade_02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\obj\Debug\net7.0\Atividade_02.AssemblyInfoInputs.cache
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\obj\Debug\net7.0\Atividade_02.AssemblyInfo.cs
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\obj\Debug\net7.0\Atividade_02.csproj.CoreCompileInputs.cache
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\bin\Debug\net7.0\Atividade_02.exe
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\bin\Debug\net7.0\Atividade_02.deps.json
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\bin\Debug\net7.0\Atividade_02.runtimeconfig.json
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\bin\Debug\net7.0\Atividade_02.dll
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\bin\Debug\net7.0\Atividade_02.pdb
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\obj\Debug\net7.0\Atividade_02.dll
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\obj\Debug\net7.0\refint\Atividade_02.dll
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\obj\Debug\net7.0\Atividade_02.pdb
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\obj\Debug\net7.0\Atividade_02.genruntimeconfig.cache
+C:\Users\vanip\Unoesc\Prog_23\Atividade_02\obj\Debug\net7.0\ref\Atividade_02.dll
