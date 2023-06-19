@@ -1,0 +1,5 @@
+C:\Users\vanip\Unoesc\Prog3_23\exercício_1\obj\Debug\net7.0\exercício_1.csproj.AssemblyReference.cache
+C:\Users\vanip\Unoesc\Prog3_23\exercício_1\obj\Debug\net7.0\exercício_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vanip\Unoesc\Prog3_23\exercício_1\obj\Debug\net7.0\exercício_1.AssemblyInfoInputs.cache
+C:\Users\vanip\Unoesc\Prog3_23\exercício_1\obj\Debug\net7.0\exercício_1.AssemblyInfo.cs
+C:\Users\vanip\Unoesc\Prog3_23\exercício_1\obj\Debug\net7.0\exercício_1.csproj.CoreCompileInputs.cache
