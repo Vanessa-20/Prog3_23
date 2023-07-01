@@ -1,6 +1,7 @@
-using Arquivos.Controllers;
+using Arquivos.Controller;
 using Arquivos.Data;
 using Arquivos.Models;
+
 
 namespace Arquivos.Views
 {
@@ -19,17 +20,19 @@ namespace Arquivos.Views
             Console.WriteLine("VOCÊ ESTÁ EM CLIENTES");
             Console.WriteLine("***********");
             Console.WriteLine("");
-            Console.WriteLine("1 - Inserir cliente");
-            Console.WriteLine("2 - listar clientes");
-            Console.WriteLine("3 - Exportar para txt");
-            Console.WriteLine("4 - Importar clientes");
-            Console.WriteLine("5 - Pesquisar clientes");
+            Console.WriteLine("01 - Inserir cliente");
+            Console.WriteLine("02 - listar clientes");
+            Console.WriteLine("03 - Exportar para txt");
+            Console.WriteLine("04 - Importar clientes");
+            Console.WriteLine("05 - Pesquisar clientes");
+            Console.WriteLine("00 - Sair");
             Console.WriteLine("***************");
             Console.WriteLine("");
 
             int option = 0;
             option = Convert.ToInt32(Console.ReadLine() );
-            switch(option){
+            switch(option)
+            {
                 case 1 :
                     Insert();
                 break;
@@ -37,17 +40,36 @@ namespace Arquivos.Views
                 case 2 :
                     List();
                 break;
+
                 case 3:
                     Export();
                 break;
+
                 case 4:
                     Import();
                 break;
+
                 case 5:
                     SearchByName();
+                    Console.WriteLine("Pesquisar");
+                    Console.WriteLine("***************");
+                    Console.WriteLine("1 - Pesquisar pelo nome.");
+                    Console.WriteLine("2 - Pesquisar pelo CPF.");
+                    int tipoPesquisa = Convert.ToInt32(Console.ReadLine() );
+                    if(tipoPesquisa ==1)
+                        SearchByName();
+                    if(tipoPesquisa == 2)
+                        SearchByCPF();
+                    if(tipoPesquisa != 1 && tipoPesquisa !=2)
+                        Console.WriteLine("\nOpção inválida.\n");
+                break;
+
+                case 0:
                 break;
 
                 default:
+                    Console.WriteLine("Desculpa, opção inválida!");
+                    this.Init();
                 break;
             }
         }
@@ -68,6 +90,8 @@ namespace Arquivos.Views
             string retorno = "";
             retorno+= $"Id: {client.Id} \n";
             retorno+= $"Nome: {client.FirstName} {client.LastName}\n";
+            retorno+= $"CPF: {client.CPF}\n";
+            retorno+= $"Email: {client.email}\n";
             retorno+= "-------------------------------------------\n";
             return retorno;
         }
@@ -125,6 +149,20 @@ namespace Arquivos.Views
                 Console.WriteLine( c.ToString() );
             }
 
+        }
+        private void SearchByCPF()
+        {
+            Console.WriteLine ("Digite o CPF do cliente aqui.");
+            string CPF = Console.ReadLine();
+
+            int contador = 0;
+            foreach( Client c in clientController.SearchByCPF(CPF))
+            {
+                Console.WriteLine(c.ToString());
+                contador ++;
+            }
+            if(contador == 0)
+                Console.WriteLine("\nCPF não encontrado!\n");        
         }
 
     }

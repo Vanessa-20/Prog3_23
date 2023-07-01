@@ -1,3 +1,0 @@
-1;Vanessa;Rossetto;258.545.545.-59;vanessa21@gmail.com
-2;Luiz;Paz;518.585.981-56;Luiz57@gmail.com
-3;Ana;Vitoria;695.259.295-59;Ana65@gmail.com

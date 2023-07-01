@@ -1,38 +1,39 @@
 ﻿using Arquivos.Views;
 using Arquivos.Utils;
-/* Programa para leitura
-*/
+
 Bootsstrapper.ChargeClients();
 
 int option = 0;
 
 do
 {
-
     Console.WriteLine ("*******************************************");
     Console.WriteLine ("Programa para leitura e exportação de dados");
     Console.WriteLine ("*******************************************");
     Console.WriteLine("");
-    Console.WriteLine("1 - Clientes");
-    Console.WriteLine("2 - Animais");
-    Console.WriteLine("3 - Veterinários");
-    Console.WriteLine("4 - Clínicas");
+    Console.WriteLine("01 - Clientes");
+    Console.WriteLine("02 - Animais");
+    Console.WriteLine("03 - Veterinários");
+    Console.WriteLine("04 - Clínicas");
+    Console.WriteLine("00 - Sair");
+    Console.WriteLine("");
+
     option = Convert.ToInt32 ( Console.ReadLine () );
 
     switch ( option)
     {
         case 1 :
-            Console.WriteLine ("OPÇÃO CLIENTES");
+            Console.WriteLine ("Opção Clientes");
             ClientView clientView = new ClientView();
         break;
 
         case 2 :
-            Console.WriteLine ("OPÇÃO ANIMAIS");
+            Console.WriteLine ("Opção Animais");
             AnimalView animalView = new AnimalView();
         break;
 
         case 3 :
-            Console.WriteLine ("OPÇÃO VETERINÁRIOS");
+            Console.WriteLine ("Opção Veterinários");
             VetView vetView = new VetView();
         break;
 
@@ -48,6 +49,5 @@ do
             Console.WriteLine("Desculpe, opção inválida!");
         break;
     }
-
 }
 while ( option > 0);

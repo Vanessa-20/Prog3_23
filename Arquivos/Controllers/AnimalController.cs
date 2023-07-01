@@ -12,7 +12,7 @@ namespace Arquivos.Controllers
     {
 
         private string directoryName = "ReportFiles";
-        private string fileName = "Animals.Txt";
+        private string fileName = "Animals.txt";
         public List<Animal> List()
         {
             return DataSet.Animals;
@@ -26,7 +26,7 @@ namespace Arquivos.Controllers
             if(animal.Id <= 0)
                 return false;
 
-            if(string.IsNullOrWhiteSpace(animal.Name))
+            if(string.IsNullOrWhiteSpace(animal.Nome))
                 return false;
 
             DataSet.Animals.Add(animal);
@@ -41,7 +41,7 @@ namespace Arquivos.Controllers
             string fileContent = string.Empty;
             foreach(Animal a in DataSet.Animals)
             {
-                fileContent += $"{a.Id};{a.Name};{a.Raca};{a.Nascimento}";
+                fileContent += $"{a.Id};{a.Nome};{a.Raca};{a.Nascimento}";
                 fileContent +="\n";
             }
         
@@ -79,7 +79,7 @@ namespace Arquivos.Controllers
                     Animal animal = new Animal();
                     string[] animalData = line.Split(';');
                     animal.Id = Convert.ToInt32(animalData[0]);
-                    animal.Name = animalData[1];
+                    animal.Nome = animalData[1];
                     animal.Raca = animalData[2];
                     animal.Nascimento = animalData[3];
 
@@ -99,12 +99,43 @@ namespace Arquivos.Controllers
             }
 
         }
+
+        public List<Animal> SearchByName(string name)
+        {
+            if (string.IsNullOrEmpty(name) || 
+                string.IsNullOrWhiteSpace(name) )
+                return null;
+
+            List<Animal> animals = new List<Animal>();
+            for (int i = 0; i<DataSet.Animals.Count; i++)
+            {
+                var a = DataSet.Animals[i];
+                if(name.ToLower().Contains(name.ToLower()) )
+                    animals.Add(a);
+            }
+            return animals;
+        }
+        public List<Animal> SearchByNascimento(string Nascimento)
+        {
+            if (string.IsNullOrEmpty(Nascimento) || 
+                string.IsNullOrWhiteSpace(Nascimento) )
+                return null;
+
+            List<Animal> animals = new List<Animal>();
+            for (int i = 0; i<DataSet.Animals.Count; i++)
+            {
+                var a = DataSet.Animals[i];
+                if( Nascimento.ToLower().Contains(Nascimento.ToLower()) )
+                    animals.Add(a);
+            }
+            return animals;
+        }
         public int GetNextId()
         {
             int tam = DataSet.Animals.Count;
 
             Console.WriteLine("Quantidade: " + tam);
-         
+        
             if (tam > 0)
                 return DataSet.Animals[tam - 1].Id + 1;
             else

@@ -1,4 +1,3 @@
-1;fafa;le;123456;fafale
-2;gaby;maroli;123.456.789.09;gabymaroli@hotmail.com
-3;vanessa;perazzolli;123.08.456.43;vanessa@unoesc.edu.br
-4;iza;secco;123.08.457.43;iza@unoesc.edu.br
+1;Vanessa;Rossetto;258.545.545.-59;vanessa21@gmail.com
+2;Luiz;Paz;518.585.981-56;Luiz57@gmail.com
+3;Ana;Vitoria;695.259.295-59;Ana65@gmail.com

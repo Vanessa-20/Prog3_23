@@ -6,9 +6,9 @@ using System.IO;
 using Arquivos.Data;
 using Arquivos.Models;
 
-namespace Arquivos.Controllers
+namespace Arquivos.Controller
 {
-    public class ClinicaControllers
+    public class ClinicaController
     {
         private string directoryName = "ReportFiles";
         private string fileName = "Clinicas.txt";
@@ -26,7 +26,7 @@ namespace Arquivos.Controllers
             if (clinica.Id <= 0)
                 return false;
 
-            if (string.IsNullOrWhiteSpace(clinica.FirstName))
+            if (string.IsNullOrWhiteSpace(clinica.Nome))
                 return false;
 
 
@@ -40,9 +40,9 @@ namespace Arquivos.Controllers
                 Directory.CreateDirectory(directoryName);
             
             string fileContent = string.Empty;
-            foreach(Clinica a in DataSet.Clinicas)
+            foreach(Clinica c in DataSet.Clinicas)
             {
-                fileContent += $"{a.Id};{a.FirstName};{a.Telephone};{a.Address}";
+                fileContent += $"{c.Id};{c.Nome};{c.Telephone};{c.Address}";
                 fileContent +="\n";
             }
         
@@ -80,7 +80,7 @@ namespace Arquivos.Controllers
                     Clinica clinica = new Clinica();
                     string[] clinicaData = line.Split(';');
                     clinica.Id = Convert.ToInt32(clinicaData[0]);
-                    clinica.FirstName = clinicaData[1];
+                    clinica.Nome = clinicaData[1];
                     clinica.Telephone = clinicaData[2];
                     clinica.Address = clinicaData[3];
 
@@ -98,7 +98,6 @@ namespace Arquivos.Controllers
                 Console.WriteLine(ex.Message);
                 return false;
             }
-
         }
 
         public List<Clinica> SearchByName(string name)
@@ -111,26 +110,14 @@ namespace Arquivos.Controllers
             List<Clinica> clinicas = new List<Clinica>();
             for(int i = 0; i < DataSet.Clinicas.Count; i++)
             {
-                var a = DataSet.Clinicas[i];
-                if(a.FullName.ToLower().Contains(name.ToLower()) )
+                var c = DataSet.Clinicas[i];
+                if(c.Nome.ToLower().Contains(name.ToLower()) )
                 {
-                    clinicas.Add(a);
+                    clinicas.Add(c);
                 }
             }
             return clinicas;
         }
-
-    }
-        public int GetNextId()
-        {
-            int tam = DataSet.Clinicas.Count;
-        
-            if (tam > 0)
-                return DataSet.Clinicas[tam - 1].Id + 1;
-            else
-                return 1;
-        }
-
         public List<Clinica> SearchByAddress(string Address)
         {
             if (string.IsNullOrEmpty(Address) || 
@@ -141,10 +128,20 @@ namespace Arquivos.Controllers
             for (int i = 0; i<DataSet.Clinicas.Count; i++)
             {
                 var a = DataSet.Clinicas[i];
-                if( c.Address.ToLower().Contains(Address.ToLower()) )
+                if( a.Address.ToLower().Contains(Address.ToLower()) )
                     clinicas.Add(a);
             }
             return clinicas;
         }
-    }   
-    
+
+        public int GetNextId()
+        {
+            int tam = DataSet.Clinicas.Count;
+
+            if (tam > 0)
+                return DataSet.Clinicas[tam - 1].Id + 1;
+            else
+                return 1;
+        }
+    }
+}

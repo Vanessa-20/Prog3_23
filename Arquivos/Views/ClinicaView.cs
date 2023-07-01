@@ -1,4 +1,4 @@
-using Arquivos.Controllers;
+using Arquivos.Controller;
 using Arquivos.Data;
 using Arquivos.Models;
 
@@ -6,11 +6,11 @@ namespace Arquivos.Views
 {
     public class ClinicaView
     {
-        private ClinicaController clinicaController;
+        private ClinicaController clinicaControllers;
 
         public ClinicaView()
         {
-            clinicaController = new ClinicaController();
+            clinicaControllers = new ClinicaController();
             this.Init();
         }
 
@@ -20,12 +20,12 @@ namespace Arquivos.Views
             Console.WriteLine("Você está em Clínica");
             Console.WriteLine("***********");
             Console.WriteLine("");
-            Console.WriteLine("1 - Inserir Clínica");
-            Console.WriteLine("2 - Listar Clínica");
-            Console.WriteLine("3 - Exportar para txt");
-            Console.WriteLine("4 - Importar Clínica");
-            Console.WriteLine("5 - Pesquisar Clínica");
-            Console.WriteLine("0 - Sair");
+            Console.WriteLine("01 - Inserir Clínica");
+            Console.WriteLine("02 - Listar Clínica");
+            Console.WriteLine("03 - Exportar para txt");
+            Console.WriteLine("04 - Importar Clínica");
+            Console.WriteLine("05 - Pesquisar Clínica");
+            Console.WriteLine("00 - Sair");
             Console.WriteLine("");
             Console.WriteLine("***************");
 
@@ -77,7 +77,7 @@ namespace Arquivos.Views
         private void List()
         {
             List<Clinica> listagem = 
-                clinicaController.List();
+                clinicaControllers.List();
 
             for (int i=0; i <listagem.Count; i++)
             {
@@ -88,7 +88,7 @@ namespace Arquivos.Views
         {
             string retorno = "";
             retorno+= $"Id: {clinica.Id} \n";
-            retorno+= $"Nome: {clinica.FirstName}\n";
+            retorno+= $"Nome: {clinica.Nome}\n";
             retorno +=$"Address: {clinica.Address}\n";
             retorno +=$"Telephone: {clinica.Telephone}\n";
             retorno+= "-------------------------------------------\n";
@@ -98,10 +98,10 @@ namespace Arquivos.Views
         private void Insert()
         {
             Clinica clinica = new Clinica();
-            clinica.Id = clinicaController.GetNextId();
+            clinica.Id = clinicaControllers.GetNextId();
             
             Console.WriteLine("Informe o nome da Clínica:");
-            clinica.FirstName = Console.ReadLine();
+            clinica.Nome = Console.ReadLine();
             
             Console.WriteLine("Informe o localização:");
             clinica.Address = Console.ReadLine();
@@ -109,7 +109,7 @@ namespace Arquivos.Views
             Console.WriteLine("Informe seu contato");
             clinica.Telephone = Console.ReadLine();
 
-            bool retorno = clinicaController.Insert(clinica);
+            bool retorno = clinicaControllers.Insert(clinica);
 
             if (retorno)
                 Console.WriteLine("Clínica inserido com sucesso!");
@@ -118,7 +118,7 @@ namespace Arquivos.Views
         }
         private void Export()
         {
-            if(clinicaController.ExportToTextFile())
+            if(clinicaControllers.ExportToTextFile())
                 Console.WriteLine("Arquivo gerada com sucesso!");
 
             else
@@ -128,7 +128,7 @@ namespace Arquivos.Views
 
         private void Import()
         {
-            if(clinicaController.ImportFromTxtFile())
+            if(clinicaControllers.ImportFromTxtFile())
                 Console.WriteLine("Arquivo importado com sucesso!");
             else
                 Console.WriteLine("Ooops! Ocorreu uma falha na importação do arquivo.");
@@ -143,7 +143,7 @@ namespace Arquivos.Views
             int contador = 0;
 
             foreach(Clinica c in 
-                clinicaController.SearchByName(name) )
+                clinicaControllers.SearchByName(name) )
             {
                 Console.WriteLine( c.ToString() );
                 contador++;
@@ -159,7 +159,7 @@ namespace Arquivos.Views
             string Address = Console.ReadLine();
 
             int contador = 0;
-            foreach( Clinica c in clinicaController.SearchByAddress(Address))
+            foreach( Clinica c in clinicaControllers.SearchByAddress(Address))
             {
                 Console.WriteLine(c.ToString());
                 contador ++;

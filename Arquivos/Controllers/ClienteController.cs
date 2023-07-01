@@ -6,7 +6,7 @@ using System.IO;
 using Arquivos.Data;
 using Arquivos.Models;
 
-namespace Arquivos.Controllers
+namespace Arquivos.Controller
 {
     public class ClientController
     {
@@ -131,7 +131,7 @@ namespace Arquivos.Controllers
             for (int i = 0; i<DataSet.Clients.Count; i++)
             {
                 var c = DataSet.Clients[i];
-                if( c.CPF.ToLower().Contains(CPF.ToLower()) )
+                if( CPF.ToLower().Contains(CPF.ToLower()) )
                     clients.Add(c);
             }
             return clients;

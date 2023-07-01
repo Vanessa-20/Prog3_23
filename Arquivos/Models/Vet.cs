@@ -20,14 +20,16 @@ namespace Arquivos.Models
         public Vet(int id, 
                     string? firstName, 
                     string? lastName, 
-                    string? cPF, 
-                    string? crmv)
+                    string? CPF, 
+                    string? CRMV)
         {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            CPF = cPF;
-            CRMV = crmv;
+
+        }
+        public string FullName => $"{this.FirstName} {this.LastName}";
+
+        public override string ToString()
+        {
+            return $"Id: {this.Id}; Name: {this.FullName}; CPF: {this.CPF}; CRMV: {this.CRMV}";
         }
     }
 }

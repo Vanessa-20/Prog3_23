@@ -141,7 +141,7 @@ namespace Arquivos.Controllers
             for (int i = 0; i<DataSet.Vets.Count; i++)
             {
                 var v = DataSet.Vets[i];
-                if( v.CRMV.ToLower().Contains(CRMV.ToLower()) )
+                if( CRMV.ToLower().Contains(CRMV.ToLower()) )
                     vets.Add(v);
             }
             return vets;
