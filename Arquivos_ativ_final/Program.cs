@@ -40,6 +40,13 @@ do
             Console.WriteLine ("Opção Clínica");
             ClinicaView clinicaView = new ClinicaView();
         break;
+
+        case 5 :
+        break;
+
+        default:
+            Console.WriteLine("Desculpe, opção inválida!");
+        break;
     }
 }
 while ( option > 0);

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using System.IO;
 using Arquivos.Data;
 using Arquivos.Models;
@@ -112,6 +113,38 @@ namespace Arquivos.Controllers
                 return DataSet.Vets[tam - 1].Id + 1;
             else
                 return 1;
+        }
+
+        public List<Vet> SearchByName(string name)
+        {
+            if (string.IsNullOrEmpty(name) || 
+                string.IsNullOrWhiteSpace(name) )
+                return null;
+
+            List<Vet> vets = new List<Vet>();
+            for (int i = 0; i<DataSet.Vets.Count; i++)
+            {
+                var v = DataSet.Vets[i];
+                if( v.FullName.ToLower().Contains(name.ToLower()) )
+                    vets.Add(v);
+            }
+            return vets;
+        }
+
+        public List<Vet> SearchByCRMV(string CRMV)
+        {
+            if (string.IsNullOrEmpty(CRMV) || 
+                string.IsNullOrWhiteSpace(CRMV) )
+                return null;
+
+            List<Vet> vets = new List<Vet>();
+            for (int i = 0; i<DataSet.Vets.Count; i++)
+            {
+                var v = DataSet.Vets[i];
+                if( v.CRMV.ToLower().Contains(CRMV.ToLower()) )
+                    vets.Add(v);
+            }
+            return vets;
         }
     }   
 }

@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 using System.IO;
 using Arquivos.Data;
 using Arquivos.Models;
-namespace Arquivos.Models.Controllers
+
+namespace Arquivos.Controllers
 {
     public class ClientController
     {
         private string directoryName = "ReportFiles";
-        private string fileName = "Clients.Txt";
+        private string fileName = "Clients.txt";
 
         public List<Client> List()
         {
@@ -94,7 +95,7 @@ namespace Arquivos.Models.Controllers
             }
             catch(Exception ex)
             {
-                Console.WriteLine("Ooops, Ocorreu um erro ao tentar importar os dados");
+                Console.WriteLine("Desculpe, Ocorreu um erro ao tentar importar os dados");
                 Console.WriteLine(ex.Message);
                 return false;
             }
@@ -119,12 +120,44 @@ namespace Arquivos.Models.Controllers
             }
             return clients;
         }
+
+        public List<Client> SearchByCPF(string CPF)
+        {
+            if (string.IsNullOrEmpty(CPF) || 
+                string.IsNullOrWhiteSpace(CPF) )
+                return null;
+
+            List<Client> clients = new List<Client>();
+            for (int i = 0; i<DataSet.Clients.Count; i++)
+            {
+                var c = DataSet.Clients[i];
+                if( c.CPF.ToLower().Contains(CPF.ToLower()) )
+                    clients.Add(c);
+            }
+            return clients;
+        }
+
+        public Client GetClientById(int id)
+    {
+        if(id <= 0)  
+        return null;
+
+        Client ret = new Client();
+        foreach(var c in DataSet.Clients)
+        {
+        if(c.Id == id)
+        {
+            ret = c;
+            break;
+        }            
+        }
+
+        return ret;
+    }
     
         public int GetNextId()
         {
             int tam = DataSet.Clients.Count;
-
-            Console.WriteLine("Quantidade: " + tam);
         
             if (tam > 0)
                 return DataSet.Clients[tam - 1].Id + 1;

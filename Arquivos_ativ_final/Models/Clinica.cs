@@ -7,10 +7,6 @@ namespace Arquivos.Models
         public string? Telephone {get;set;}
         public string? Address { get;set;}
         
-        public Clinica()
-        {
-            
-        }
         public Clinica(int id, 
                     string? firstName, 
                     string? telephone, 

@@ -29,5 +29,11 @@ namespace Arquivos.Models
             CPF = cPF;
             CRMV = crmv;
         }
+        public string FullName => $"{this.FirstName} {this.LastName}";
+
+        public override string ToString()
+        {
+            return $"Id: {this.Id}; Name: {this.FullName}; CPF: {this.CPF}; CRMV: {this.CRMV}";
+        }
     }
 }

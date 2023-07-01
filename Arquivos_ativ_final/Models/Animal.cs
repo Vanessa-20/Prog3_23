@@ -19,5 +19,10 @@ namespace Arquivos.Models
             raca = Raca;
             nascimento = Nascimento;
         }
+
+        public override string ToString()
+        {
+            return $"Id: {this.Id}; Name: {this.Name}; Raça: {this.Raca}; Nascimento: {this.Nascimento};";
+        }
     }
 }

@@ -67,5 +67,28 @@ namespace Arquivos.Utils
                 }
             );
         }
+        public static void ChargeVets()
+        {
+            DataSet.Vets.Add(
+                new Vet{
+                    Id = 1,
+                    FirstName = "Allam",
+                    LastName = "Bugui",
+                    CPF = "542.515.268-54",
+                    CRMV = "69948"
+                } 
+            );   
+        }
+        public static void ChargeAnimals()
+        {
+            DataSet.Animals.Add(
+                new Animal{
+                    Id = 1,
+                    Name = "Marlei",
+                    Raca = "Dalmata",
+                    Nascimento = "05-10-2018"
+                } 
+            );   
+        }
     }
 }

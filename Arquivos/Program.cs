@@ -16,7 +16,7 @@ do
     Console.WriteLine("1 - Clientes");
     Console.WriteLine("2 - Animais");
     Console.WriteLine("3 - Veterinários");
-
+    Console.WriteLine("4 - Clínicas");
     option = Convert.ToInt32 ( Console.ReadLine () );
 
     switch ( option)
@@ -34,6 +34,18 @@ do
         case 3 :
             Console.WriteLine ("OPÇÃO VETERINÁRIOS");
             VetView vetView = new VetView();
+        break;
+
+        case 4 :
+            Console.WriteLine ("Opção Clínica");
+            ClinicaView clinicaView = new ClinicaView();
+        break;
+
+        case 5 :
+        break;
+
+        default:
+            Console.WriteLine("Desculpe, opção inválida!");
         break;
     }
 

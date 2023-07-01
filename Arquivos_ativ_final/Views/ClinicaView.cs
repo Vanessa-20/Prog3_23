@@ -25,29 +25,51 @@ namespace Arquivos.Views
             Console.WriteLine("3 - Exportar para txt");
             Console.WriteLine("4 - Importar Clínica");
             Console.WriteLine("5 - Pesquisar Clínica");
+            Console.WriteLine("0 - Sair");
             Console.WriteLine("");
             Console.WriteLine("***************");
 
             int option = 0;
             option = Convert.ToInt32(Console.ReadLine() );
-            switch(option){
+            switch(option)
+            {
                 case 1 :
                     Insert();
                 break;
+
                 case 2 :
                     List();
                 break;
+                
                 case 3:
                     Export();
                 break;
+
                 case 4:
                     Import();
                 break;
+                
                 case 5:
                     SearchByName();
+                    Console.WriteLine("Pesquisar");
+                    Console.WriteLine("***************");
+                    Console.WriteLine("1 - Pesquisar pelo nome.");
+                    Console.WriteLine("2 - Pesquisar pelo endereço.");
+                    int tipoPesquisa = Convert.ToInt32(Console.ReadLine() );
+                    if(tipoPesquisa ==1)
+                        SearchByName();
+                    if(tipoPesquisa == 2)
+                        SearchByAddress();
+                    if(tipoPesquisa != 1 && tipoPesquisa !=2)
+                        Console.WriteLine("\nDesculpe, opção inválida.\n");
+                break;
+
+                case 0:
                 break;
 
                 default:
+                    Console.WriteLine("Desculpe, opção inválida!");
+                    this.Init();
                 break;
             }
         }
@@ -67,6 +89,8 @@ namespace Arquivos.Views
             string retorno = "";
             retorno+= $"Id: {clinica.Id} \n";
             retorno+= $"Nome: {clinica.FirstName}\n";
+            retorno +=$"Address: {clinica.Address}\n";
+            retorno +=$"Telephone: {clinica.Telephone}\n";
             retorno+= "-------------------------------------------\n";
             return retorno;
         }
@@ -116,11 +140,33 @@ namespace Arquivos.Views
             Console.WriteLine("Digite o nome:");
             string name = Console.ReadLine();
 
-            foreach(Clinica a in 
+            int contador = 0;
+
+            foreach(Clinica c in 
                 clinicaController.SearchByName(name) )
             {
-                Console.WriteLine( a.ToString() );
+                Console.WriteLine( c.ToString() );
+                contador++;
             }
+
+            if(contador == 0)
+                Console.WriteLine("\nOpção não encontrada!!!\n"); 
         }
+        
+        private void SearchByAddress()
+        {
+            Console.WriteLine ("Digite o endereço.");
+            string Address = Console.ReadLine();
+
+            int contador = 0;
+            foreach( Clinica c in clinicaController.SearchByAddress(Address))
+            {
+                Console.WriteLine(c.ToString());
+                contador ++;
+            }
+            if(contador == 0)
+                Console.WriteLine("\nEndereço não encontrado!\n");        
+        }
+
     }
 }

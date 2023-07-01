@@ -12,7 +12,7 @@ namespace Arquivos.Controllers
     {
 
         private string directoryName = "ReportFiles";
-        private string fileName = "Animals.Txt";
+        private string fileName = "Animals.txt";
         public List<Animal> List()
         {
             return DataSet.Animals;
@@ -99,12 +99,43 @@ namespace Arquivos.Controllers
             }
 
         }
+
+        public List<Animal> SearchByName(string name)
+        {
+            if (string.IsNullOrEmpty(name) || 
+                string.IsNullOrWhiteSpace(name) )
+                return null;
+
+            List<Animal> animals = new List<Animal>();
+            for (int i = 0; i<DataSet.Animals.Count; i++)
+            {
+                var a = DataSet.Animals[i];
+                if( c.Name.ToLower().Contains(name.ToLower()) )
+                    animals.Add(c);
+            }
+            return animals;
+        }
+        public List<Animal> SearchByNascimento(string Nascimento)
+        {
+            if (string.IsNullOrEmpty(Nascimento) || 
+                string.IsNullOrWhiteSpace(Nascimento) )
+                return null;
+
+            List<Animal> animals = new List<Animal>();
+            for (int i = 0; i<DataSet.Animals.Count; i++)
+            {
+                var a = DataSet.Animals[i];
+                if( a.Nascimento.ToLower().Contains(Nascimento.ToLower()) )
+                    animals.Add(a);
+            }
+            return animals;
+        }
         public int GetNextId()
         {
             int tam = DataSet.Animals.Count;
 
             Console.WriteLine("Quantidade: " + tam);
-         
+        
             if (tam > 0)
                 return DataSet.Animals[tam - 1].Id + 1;
             else

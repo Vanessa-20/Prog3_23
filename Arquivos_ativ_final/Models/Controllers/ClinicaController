@@ -6,7 +6,7 @@ using System.IO;
 using Arquivos.Data;
 using Arquivos.Models;
 
-namespace Arquivos.Models.Controllers
+namespace Arquivos.Controllers
 {
     public class ClinicaControllers
     {
@@ -94,7 +94,7 @@ namespace Arquivos.Models.Controllers
             }
             catch(Exception ex)
             {
-                Console.WriteLine("Ooops, Ocorreu um erro ao tentar importar os dados");
+                Console.WriteLine("Desculpe, ocorreu um erro ao tentar importar os dados");
                 Console.WriteLine(ex.Message);
                 return false;
             }
@@ -119,16 +119,32 @@ namespace Arquivos.Models.Controllers
             }
             return clinicas;
         }
-    
+
+    }
         public int GetNextId()
         {
             int tam = DataSet.Clinicas.Count;
-
         
             if (tam > 0)
                 return DataSet.Clinicas[tam - 1].Id + 1;
             else
                 return 1;
         }
+
+        public List<Clinica> SearchByAddress(string Address)
+        {
+            if (string.IsNullOrEmpty(Address) || 
+                string.IsNullOrWhiteSpace(Address) )
+                return null;
+
+            List<Clinica> clinicas = new List<Clinica>();
+            for (int i = 0; i<DataSet.Clinicas.Count; i++)
+            {
+                var a = DataSet.Clinicas[i];
+                if( c.Address.ToLower().Contains(Address.ToLower()) )
+                    clinicas.Add(a);
+            }
+            return clinicas;
+        }
     }   
-    }
+    
